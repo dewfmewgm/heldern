@@ -1,0 +1,186 @@
+/* Standaard styling voor de body en de ballonnen */
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 1s ease;
+    background-repeat: no-repeat;
+}
+
+#timelineContainer {
+    position: absolute;
+    bottom: 300px; /* Virtuele lijn 300px vanaf de onderkant */
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
+.balloon {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 160px;
+    margin-right: 60px; /* Vergroot de marge aan de rechterkant */
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: absolute;
+}
+
+.balloon-content {
+    height: 90%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Zorg ervoor dat de inhoud aan de bovenkant begint */
+    align-items: flex-start; /* Uitlijnen aan de linkerkant */
+}
+
+.source-name {
+    font-size: 12px;
+    font-weight: bold;
+    color: #ffdd57;
+    margin-bottom: 5px;
+}
+
+.balloon p {
+    font-size: 13px;
+    margin: 0;
+    white-space: normal;
+}
+
+.balloon-footer {
+    display: flex;
+    justify-content: space-between; /* Zorg ervoor dat er ruimte is tussen de elementen */
+    align-items: center; /* Center uitlijnen */
+    width: 100%; /* Zorg ervoor dat de footer de volledige breedte van de ballon gebruikt */
+    margin-top: auto; /* Dit zorgt ervoor dat de footer naar de onderkant van de ballon schuift */
+}
+
+.balloon a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.balloon a:hover {
+    text-decoration: underline;
+}
+
+.timestamp {
+    font-size: 10px;
+    color: #cccccc;
+    text-align: right;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+    transition: color 0.3s;
+    z-index: 1;
+}
+
+.close-button:hover {
+    color: red;
+}
+
+/* Popup styling */
+.popup {
+    display: none; /* Standaard niet zichtbaar */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Donkere achtergrond */
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% van de bovenkant en automatisch links en rechts */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Breedte van de pop-up */
+    border-radius: 5px; /* Ronde hoeken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.5s; /* Vervagingseffect */
+}
+
+/* Zorg ervoor dat de sluitknop goed zichtbaar is */
+.popup-content .close {
+    cursor: pointer;
+    color: #aaa; /* Grijze kleur voor de sluitknop */
+    float: right; /* Plaats de sluitknop rechtsboven */
+    font-size: 28px; /* Grootte van de sluitknop */
+    font-weight: bold; /* Maak de sluitknop vetgedrukt */
+}
+
+.popup-content .close:hover,
+.popup-content .close:focus {
+    color: red; /* Verander kleur bij hover */
+    text-decoration: none; /* Geen onderlijn bij hover */
+    cursor: pointer; /* Cursor veranderen naar pointer */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Mobiele stijlen */
+@media (max-width: 768px) {
+    #timelineContainer {
+        bottom: 165px;
+    }
+
+    .balloon {
+        width: 280px;
+        height: 220px; /* Verhoogd naar 220px voor meer ruimte */
+        padding: 30px 20px 40px; /* Meer padding onderaan voor de link */
+    }
+
+    .balloon p {
+        font-size: 18px;
+    }
+
+    .balloon a {
+        font-size: 16px;
+    }
+
+    .timestamp {
+        font-size: 14px;
+    }
+
+    .close-button {
+        right: -5px;
+        top: 10px;
+    }
+
+    .close-button:hover {
+        color: white;
+    }
+}
