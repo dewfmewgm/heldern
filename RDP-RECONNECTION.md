@@ -2,7 +2,7 @@
 
 ## Nederlandse Uitleg
 
-### Vraag: Kan ik hier iets in instellen dat deze de verbinding weer hersteld zodra deze weg is?
+### Vraag: Kan ik hier iets in instellen dat deze de verbinding weer herstelt zodra deze weg is?
 
 **Ja!** Je huidige configuratie heeft al `autoreconnection enabled:i:1` ingesteld, wat automatische herverbinding activeert. Echter, er zijn aanvullende instellingen die de herverbinding kunnen verbeteren:
 
