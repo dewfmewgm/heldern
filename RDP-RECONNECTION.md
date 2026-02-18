@@ -108,6 +108,10 @@ keep alive interval:i:60000
 
 ## Complete Improved RDP Configuration File
 
+**Important:** Before using this configuration, replace the following placeholders:
+- `YOUR_SERVER_IP` - Replace with your actual server IP address (e.g., 192.168.1.100)
+- `DOMAIN\username` - Replace with your actual domain and username (e.g., mycompany\john.doe)
+
 Save this as `verbinding.rdp` or modify your existing file:
 
 ```rdp
@@ -134,7 +138,7 @@ disable menu anims:i:1
 disable themes:i:0
 disable cursor setting:i:0
 bitmapcachepersistenable:i:1
-full address:s:192.168.241.11
+full address:s:YOUR_SERVER_IP
 audiomode:i:0
 redirectprinters:i:1
 redirectcomports:i:0
@@ -158,7 +162,7 @@ gatewaybrokeringtype:i:0
 use redirection server name:i:0
 rdgiskdcproxy:i:0
 kdcproxyname:s:
-username:s:uitvaartndal\
+username:s:DOMAIN\username
 remoteappmousemoveinject:i:1
 redirectlocation:i:0
 redirectwebauthn:i:1
